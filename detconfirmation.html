@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Case Resolution</title>
+    <link rel="stylesheet" href="confirmation.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Confirm Case Resolution</h2>
+        <p>Are you sure you want to mark this case as solved?</p>
+
+        <div class="buttons">
+            <button class="btn confirm" onclick="confirmSolve()">Yes, Mark as Solved</button>
+            <button class="btn cancel" onclick="goBack()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmSolve() {
+            alert("Case has been marked as solved.");
+            window.location.href = "dashboard.html";  // Redirect to home page
+        }
+
+        function goBack() {
+            window.history.back();  // Go back to previous page
+        }
+    </script>
+</body>
+</html>

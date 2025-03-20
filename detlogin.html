@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIO Login</title>
+    <link rel="stylesheet" href="ciologin.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Detective Login</h2>
+        <div class="login-box">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" required>
+
+            <button onclick="login()">Login</button>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let errorMsg = document.getElementById("error-msg");
+
+            // Sample credentials (Replace with backend authentication later)
+            let validCredentials = {
+                "admin": "admin@1234",
+                "cio_master": "admin@2025"
+            };
+
+            if (validCredentials[username] && validCredentials[username] === password) {
+                alert("Login Successful!");
+                window.location.href = "detdashboard.html";  // Redirect to CIO dashboard
+            } else {
+                errorMsg.textContent = "Invalid username or password!";
+            }
+        }
+    </script>
+</body>
+</html>

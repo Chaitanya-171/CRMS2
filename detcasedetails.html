@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details</title>
+    <link rel="stylesheet" href="casedetails.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Case Details</h2>
+
+        <!-- Case Information -->
+        <div class="case-info">
+            <h3>Case Information</h3>
+            <p><strong>Case ID:</strong> #00123</p>
+            <p><strong>Crime Type:</strong> Theft</p>
+            <p><strong>Status:</strong> In Progress</p>
+            <p><strong>Assigned Date:</strong> 2025-02-10</p>
+            <p><strong>Location:</strong> XYZ Street, Mumbai</p>
+        </div>
+
+        <!-- Victim & Suspect Details -->
+        <div class="details">
+            <h3>Victim Details</h3>
+            <p><strong>Name:</strong> Rahul Sharma</p>
+            <p><strong>Contact:</strong> 9876543210</p>
+
+            <h3>Suspect Details</h3>
+            <p><strong>Name:</strong> Unknown</p>
+            <p><strong>Description:</strong> Last seen wearing a black hoodie</p>
+        </div>
+
+        <!-- Investigation Progress -->
+        <div class="progress">
+            <h3>Investigation Updates</h3>
+            <textarea id="update-text" placeholder="Enter investigation update..."></textarea>
+            <button class="btn">Add Update</button>
+        </div>
+
+        <!-- Evidence Section -->
+        <div class="evidence">
+            <h3>Evidence Files</h3>
+            <input type="file" id="file-upload">
+            <button class="btn">Upload</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button class="btn success" onclick="location.href='confirmation.html'">Mark as Solved</button>
+            <button class="btn danger" onclick="location.href='dashboard.html'">Close Case</button>
+        </div>
+    </div>
+</body>
+</html>

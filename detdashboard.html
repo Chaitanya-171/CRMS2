@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detective Dashboard</title>
+    <link rel="stylesheet" href="detdashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <h2>Detective Dashboard</h2>
+
+        <!-- Search & Filter Section -->
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Search cases...">
+            <select id="filter">
+                <option value="">Filter by Status</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Solved">Solved</option>
+            </select>
+        </div>
+
+        <!-- Cases Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Case ID</th>
+                    <th>Crime Type</th>
+                    <th>Status</th>
+                    <th>Assigned Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#00123</td>
+                    <td>Theft</td>
+                    <td>In Progress</td>
+                    <td>2025-02-10</td>
+                    <td><a href="casedetails.html" class="btn">View</a></td>
+                </tr>
+                <tr>
+                    <td>#00124</td>
+                    <td>Fraud</td>
+                    <td>Solved</td>
+                    <td>2025-02-08</td>
+                    <td><a href="casedetails.html" class="btn">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = "index.html"; // Redirects to index.html
+        }
+    </script>
+</body>
+</html>

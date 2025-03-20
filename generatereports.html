@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Generate Crime Report</h1>
+    </header>
+
+    <section class="container">
+        <form id="reportForm">
+            <label for="complaintID">Complaint ID:</label>
+            <input type="text" id="complaintID" name="complaintID" value="C001" readonly>
+
+            <label for="officerName">Officer Name:</label>
+            <input type="text" id="officerName" name="officerName" required>
+
+            <label for="investigationDetails">Investigation Details:</label>
+            <textarea id="investigationDetails" name="investigationDetails" required></textarea>
+
+            <label for="status">Case Status:</label>
+            <select id="status" name="status">
+                <option value="Under Investigation">Under Investigation</option>
+                <option value="Solved">Solved</option>
+                <option value="Closed">Closed</option>
+            </select>
+
+            <button type="submit" class="btn">Submit Report</button>
+        </form>
+    </section>
+
+    <!-- Confirmation Message -->
+    <div id="confirmationMessage"></div>
+
+    <script>
+        document.getElementById("reportForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevents form submission
+
+            // Display confirmation message
+            let confirmationDiv = document.getElementById("confirmationMessage");
+            confirmationDiv.innerHTML = "<p class='success-message'>✅ Report Submitted Successfully!</p>";
+
+            // Optionally, reset the form
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Dark Mode Theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 50%;
+}
+
+/* Heading */
+h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+/* Paragraph */
+p {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+/* Button */
+.btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

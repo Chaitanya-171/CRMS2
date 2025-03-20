@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIO Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h2>CIO Dashboard</h2>
+
+        <!-- Case Overview -->
+        <div class="case-overview">
+            <h3>Case Overview</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Crime Type</th>
+                        <th>Status</th>
+                        <th>Assigned Detective</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#00123</td>
+                        <td>Theft</td>
+                        <td>In Progress</td>
+                        <td>Detective Raj</td>
+                        <td><button class="btn view" onclick="location.href='casedetails.html'">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>#00124</td>
+                        <td>Fraud</td>
+                        <td>Unassigned</td>
+                        <td>--</td>
+                        <td><button class="btn assign" onclick="location.href='assignsuccess.html'">Assign</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Assign Cases -->
+        <div class="assign-case">
+            <h3>Assign Cases</h3>
+            <label for="case-id">Select Case:</label>
+            <select id="case-id">
+                <option value="00124">Case #00124 - Fraud</option>
+            </select>
+
+            <label for="detective">Assign to:</label>
+            <select id="detective">
+                <option value="Raj">Detective Raj</option>
+                <option value="Meera">Detective Meera</option>
+            </select>
+            <button class="btn assign" onclick="location.href='assignsuccess.html'">Assign</button>
+        </div>
+
+        <!-- Investigation Reports -->
+        <div class="reports">
+            <h3>Generate Reports</h3>
+            <button class="btn report-btn" onclick="downloadReport()">Download Reports</button>
+        </div>
+    </div>
+
+    <!-- PDF Generation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        function downloadReport() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("Crime Records Management System", 20, 20);
+            doc.text("CIO Investigation Report", 20, 30);
+            doc.text("Generated on: " + new Date().toLocaleString(), 20, 40);
+            
+            // Sample report data
+            doc.text("Case ID: #00123", 20, 60);
+            doc.text("Crime Type: Theft", 20, 70);
+            doc.text("Detective: Raj Mehta", 20, 80);
+            doc.text("Status: In Progress", 20, 90);
+            doc.text("Location: XYZ Street, Mumbai", 20, 100);
+
+            // Save PDF
+            doc.save("Investigation_Report.pdf");
+        }
+    </script>
+</body>
+</html>

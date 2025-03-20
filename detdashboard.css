@@ -1,0 +1,98 @@
+/* Dark Mode Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #ffcc00;
+}
+
+/* Search & Filter */
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.search-filter input, .search-filter select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+}
+
+/* Table */
+table {
+    width: 100%;
+   border-collapse:collapse;
+    background: #1e1e1e;
+    margin-top:20px;
+    border-spacing: 10px;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    margin-top:20px;
+}
+
+th {
+    background: #333;
+    margin-top:20px;
+}
+
+tr:hover {
+    background: #292929;
+}
+
+/* Buttons */
+.btn {
+    padding: 5px 10px;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top:20px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+/* Logout Button */
+.logout-container {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.logout-btn {
+    background: #dc3545; /* Red color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.logout-btn:hover {
+    background: #a71d2a;
+}

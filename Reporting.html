@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Crime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 40%;
+            margin: 50px auto;
+            background: #021B33;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #00BFFF;
+        }
+        label {
+            font-weight: bold;
+            color: white;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 95%;
+            max-width: 600px;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        body {
+            background-image: url('gettyimages-1629534276-640x640.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .checkbox-container label {
+            color: white;
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        /* Hidden by default when reporting anonymously */
+        .user-info {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Report a Crime</h2>
+        <form id="crimeReportForm">
+            <label for="crimeType">Crime Type:</label>
+            <select id="crimeType" required>
+                <option value="">Select Crime Type</option>
+                <option value="Theft">Theft</option>
+                <option value="Assault">Assault</option>
+                <option value="Cybercrime">Cybercrime</option>
+                <option value="Fraud">Fraud</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="crimeDate">Date of Crime:</label>
+            <input type="date" id="crimeDate" required>
+
+            <label for="crimeLocation">Location:</label>
+            <input type="text" id="crimeLocation" placeholder="Enter the crime location" required>
+
+            <label for="crimeDescription">Description:</label>
+            <textarea id="crimeDescription" rows="5" placeholder="Describe the incident" required></textarea>
+
+            <label for="evidenceUpload">Upload Evidence (Images/Videos/Documents):</label>
+            <input type="file" id="evidenceUpload" accept="image/*,video/*,.pdf">
+
+            <!-- Checkbox for Anonymous Reporting -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="anonymousReport">
+                <label for="anonymousReport">Report Anonymously</label>
+            </div>
+
+            <!-- User Info Fields (Hidden if anonymous reporting is selected) -->
+            <div id="userInfo" class="user-info">
+                <label for="userName">Full Name:</label>
+                <input type="text" id="userName" placeholder="Enter your full name">
+
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" placeholder="Enter your email">
+
+                <label for="userPhone">Phone Number:</label>
+                <input type="text" id="userPhone" placeholder="Enter your phone number">
+            </div>
+
+            <button type="submit">Submit Report</button>
+        </form>
+    </div>
+
+    <script>
+        // Toggle user details based on anonymous reporting
+        document.getElementById("anonymousReport").addEventListener("change", function() {
+            let userInfo = document.getElementById("userInfo");
+            if (this.checked) {
+                userInfo.style.display = "none";
+            } else {
+                userInfo.style.display = "block";
+            }
+        });
+
+        // Handle form submission
+        document.getElementById("crimeReportForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+           
+            window.location.href = "confirmation.html"; 
+        });
+    </script>
+
+</body>
+</html>

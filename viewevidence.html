@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Evidence</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #121212;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-btn {
+            background: #2980b9;
+            color: white;
+            box-shadow: 0 0 4px rgba(41, 128, 185, 0.5);
+        }
+
+        .download-btn {
+            background: #27ae60;
+            color: white;
+            box-shadow: 0 0 4px rgba(39, 174, 96, 0.5);
+        }
+
+        .verify-btn {
+            background: #f39c12;
+            color: white;
+            box-shadow: 0 0 4px rgba(243, 156, 18, 0.5);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+        }
+
+        .verified {
+            background: green !important;
+            box-shadow: 0 0 6px rgba(0, 255, 0, 0.5) !important;
+            color: white !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🔍 View Evidence</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>Evidence Type</th>
+                    <th>View</th>
+                    <th>Download</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123456</td>
+                    <td>Image</td>
+                    <td><a href="evidence1.jpg" class="btn view-btn" target="_blank">View</a></td>
+                    <td><a href="evidence1.jpg" class="btn download-btn" download>Download</a></td>
+                    <td><button class="btn verify-btn" onclick="verifyEvidence(this)">Verify</button></td>
+                </tr>
+                <tr>
+                    <td>789012</td>
+                    <td>Document</td>
+                    <td><a href="evidence2.pdf" class="btn view-btn" target="_blank">View</a></td>
+                    <td><a href="evidence2.pdf" class="btn download-btn" download>Download</a></td>
+                    <td><button class="btn verify-btn" onclick="verifyEvidence(this)">Verify</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function verifyEvidence(button) {
+            button.innerText = "Verified";
+            button.classList.add("verified");
+        }
+    </script>
+
+</body>
+</html>

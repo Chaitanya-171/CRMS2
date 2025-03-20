@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('gettyimages-1629534276-640x640.jpg'); /* Add a relevant background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 40%;
+    margin: 100px auto;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    color: #FFC107;
+}
+
+input {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Status Result Section */
+#statusResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Initially hidden */
+}
+
+/* If Complaint ID is valid */
+.status-valid {
+    background-color: rgba(0, 128, 0, 0.8); /* Green background */
+    color: white;
+}
+
+/* If Complaint ID is invalid */
+.status-invalid {
+    background-color: rgba(255, 0, 0, 0.8); /* Red background */
+    color: white;
+}
+
+button {
+    width: 50%; /* Reduced width from 100% to 50% */
+    max-width: 200px; /* Ensures the button does not become too large */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Adds spacing above the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#statusResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}

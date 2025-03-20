@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Close Case Confirmation</title>
+    <link rel="stylesheet" href="close.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Confirm Case Closure</h2>
+        <p>Are you sure you want to close this case? This action cannot be undone.</p>
+        
+        <div class="buttons">
+            <button class="btn confirm" onclick="confirmClosure()">Yes, Close Case</button>
+            <button class="btn cancel" onclick="goBack()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function confirmClosure() {
+            alert("Case has been successfully closed.");
+            window.location.href = "detdashboard.html"; // Redirects to the dashboard or home page
+        }
+
+        function goBack() {
+            window.history.back(); // Goes back to the previous page
+        }
+    </script>
+</body>
+</html>

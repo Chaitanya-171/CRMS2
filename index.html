@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Records Management System</title>
+    <link rel="stylesheet" href="UserHome.css">
+</head>
+<body>
+    <style>
+        /* Background Styling */
+        body {
+            background: url('gettyimages-1629534276-640x640.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #FFC107;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0 15px;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        ul li a:hover {
+            color: #FFC107;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FFC107;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            background: rgba(255, 193, 7, 0.9);
+            color: black;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: rgba(255, 193, 7, 1);
+            transform: scale(1.05);
+        }
+
+        /* Emergency Alerts */
+        .alerts {
+            background: rgba(255, 0, 0, 0.9);
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* Emergency Helpline */
+        .helplines {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 30px auto;
+            width: 80%;
+        }
+
+        .helplines h2 {
+            color: #FFC107;
+            font-size: 24px;
+        }
+
+        .helplines p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+
+        /* Safety Tips */
+        .safety-tips {
+            background: rgba(255, 193, 7, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 30px auto;
+            width: 80%;
+            color: black;
+        }
+
+        .safety-tips h2 {
+            font-size: 24px;
+        }
+
+        .safety-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .safety-tips ul li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Role Selection */
+        .role-selection {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 50px auto;
+            width: 70%;
+        }
+
+        .role-selection h2 {
+            margin-bottom: 20px;
+            color: #FFC107;
+            font-size: 24px;
+        }
+
+        .role-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .role-btn {
+            background: rgba(0, 123, 255, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            width: 180px;
+        }
+
+        .role-btn:hover {
+            background: rgba(0, 123, 255, 1);
+            transform: translateY(-3px);
+        }
+    </style>
+
+    <!-- Navigation Bar -->
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to the Crime Records Management System</h1>
+        <p>Report crimes, track complaints, and stay informed about safety.</p>
+        <div class="buttons">
+            <a href="Reporting.html" class="btn">Report a Crime</a>
+            <a href="trackcomplaint.html" class="btn">Track Complaint</a>
+        </div>
+    </section>
+
+    <!-- Emergency Alerts -->
+    <div class="alerts">
+        ⚠️ **EMERGENCY ALERT: Armed robbery reported in Sector 12**  
+    </div>
+
+    <!-- Emergency Helpline Section -->
+    <div class="helplines">
+        <h2>Emergency Helplines</h2>
+        <p>📞 Police: <strong>100</strong></p>
+        <p>📞 Women’s Helpline: <strong>1091</strong></p>
+        <p>📞 Cyber Crime: <strong>1930</strong></p>
+        <p>📞 Fire Emergency: <strong>101</strong></p>
+    </div>
+
+    <!-- Safety Tips -->
+    <div class="safety-tips">
+        <h2>Safety Tips</h2>
+        <ul>
+            <li>🔒 Always lock your doors and windows before leaving.</li>
+            <li>🚶 Avoid isolated areas at night.</li>
+            <li>📢 Report suspicious activities immediately.</li>
+            <li>💳 Never share bank details over phone calls.</li>
+        </ul>
+    </div>
+
+    <!-- Role Selection -->
+    <div class="role-selection">
+        <h2>For Authorized Personnel</h2>
+        <div class="role-buttons">
+            <a href="ciologin.html" class="role-btn">CIO</a>
+            <a href="detlogin.html?role=detective" class="role-btn">Detective</a>
+            <a href="offlogin.html?role=officer" class="role-btn">Officer</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Dark Mode Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Headings */
+h2, h3 {
+    color: #00BFFF;
+    border-bottom: 2px solid #00BFFF;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Sections */
+.case-info, .details, .progress, .evidence, .actions {
+    margin-bottom: 20px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+/* File Upload */
+input[type="file"] {
+    background: #222;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    margin-top: 10px;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Action Buttons */
+.success {
+    background: #28a745;
+}
+
+.success:hover {
+    background: #218838;
+}
+
+.danger {
+    background: #dc3545;
+}
+
+.danger:hover {
+    background: #c82333;
+}

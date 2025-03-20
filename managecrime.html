@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Complaints</title>
+    <link rel="stylesheet" href="managecrime.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Manage Complaints</h1>
+    </header>
+
+    <!-- Complaints Table -->
+    <main>
+        <section class="complaints-section">
+            <h2>Complaints List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Complainant</th>
+                        <th>Crime Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1001</td>
+                        <td>Rahul Sharma</td>
+                        <td>Theft</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td>
+                            <button class="btn view" onclick="viewComplaint(1001, 'Rahul Sharma', 'Theft', 'Pending')">View</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1002</td>
+                        <td>Priya Mehta</td>
+                        <td>Cyber Crime</td>
+                        <td><span class="status in-progress">In Progress</span></td>
+                        <td>
+                            <button class="btn view" onclick="viewComplaint(1002, 'Priya Mehta', 'Cyber Crime', 'In Progress')">View</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#1003</td>
+                        <td>Amit Verma</td>
+                        <td>Assault</td>
+                        <td><span class="status resolved">Resolved</span></td>
+                        <td>
+                            <button class="btn view" onclick="viewComplaint(1003, 'Amit Verma', 'Assault', 'Resolved')">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Crime Records Management System</p>
+    </footer>
+
+    <!-- JavaScript for View Button -->
+    <script>
+        function viewComplaint(id, complainant, crimeType, status) {
+            const url = `viewreports.html?complaintID=${id}&complainant=${encodeURIComponent(complainant)}&crimeType=${encodeURIComponent(crimeType)}&status=${encodeURIComponent(status)}`;
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaint</title>
+    <link rel="stylesheet" href="viewreports.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Complaint Details</h1>
+    </header>
+
+    <!-- Complaint Details Section -->
+    <main class="complaint-details">
+        <h2>Complaint Information</h2>
+        <p><strong>Complaint ID:</strong> #1001</p>
+        <p><strong>Complainant:</strong> Rahul Sharma</p>
+        <p><strong>Crime Type:</strong> Theft</p>
+        <p><strong>Date Reported:</strong> 22nd Feb 2025</p>
+        <p><strong>Status:</strong> Pending</p>
+        <p><strong>Description:</strong> Wallet stolen at XYZ street near the bus stop.</p>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button onclick="goBack()">Back</button>
+            <button onclick="updateComplaint()">Update</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Crime Records Management System</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function updateComplaint() {
+            window.location.href = "updatecomplaintstatus.html";
+        }
+    </script>
+
+</body>
+</html>

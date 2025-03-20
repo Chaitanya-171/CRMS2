@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIO Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logout Button -->
+        <button class="btn logout" onclick="logout()">Logout</button>
+
+        <h2 class="title">CIO Dashboard</h2>
+
+        <!-- Case Overview -->
+        <div class="case-overview">
+            <h3>Case Overview</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Crime Type</th>
+                        <th>Status</th>
+                        <th>Assigned Detective</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="case-table">
+                    <tr id="case-00123">
+                        <td>#00123</td>
+                        <td>Theft</td>
+                        <td class="status in-progress">In Progress</td>
+                        <td>Detective Raj</td>
+                        <td><button class="btn view" onclick="viewCase('00123')">View</button></td>
+                    </tr>
+                    <tr id="case-00124">
+                        <td>#00124</td>
+                        <td>Fraud</td>
+                        <td class="status unassigned">Unassigned</td>
+                        <td>--</td>
+                        <td><button class="btn assign" onclick="assignCase('00124')">Assign</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Assign Cases -->
+        <div class="assign-case">
+            <h3>Assign Cases</h3>
+            <label for="case-id">Select Case:</label>
+            <select id="case-id">
+                <option value="00124">Case #00124 - Fraud</option>
+            </select>
+
+            <label for="detective">Assign to:</label>
+            <select id="detective">
+                <option value="Raj">Detective Raj</option>
+                <option value="Meera">Detective Meera</option>
+            </select>
+            <button class="btn assign" onclick="assignSelectedCase()">Assign</button>
+        </div>
+
+        <!-- Investigation Reports -->
+        <div class="reports">
+            <h3>Generate Reports</h3>
+            <button class="btn report-btn" onclick="downloadReport()">Download Reports</button>
+        </div>
+    </div>
+
+    <!-- PDF Generation Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Function to View Case Details (Now Just Alerts Instead of a Separate Section)
+        function viewCase(caseId) {
+            alert(`Viewing details for Case #${caseId}`);
+        }
+
+        // Function to Assign a Detective to a Case
+        function assignCase(caseId) {
+            let selectedDetective = prompt("Enter Detective Name (Raj or Meera):");
+            if (selectedDetective) {
+                let row = document.getElementById(`case-${caseId}`);
+                if (row) {
+                    row.cells[2].innerText = "Assigned";
+                    row.cells[2].classList.remove("unassigned");
+                    row.cells[3].innerText = selectedDetective;
+                    row.cells[4].innerHTML = `<button class="btn view" onclick="viewCase('${caseId}')">View</button>`;
+                    alert(`Case ${caseId} assigned to Detective ${selectedDetective}`);
+                }
+            }
+        }
+
+        // Function to Assign Selected Case from Dropdown
+        function assignSelectedCase() {
+            let caseId = document.getElementById("case-id").value;
+            let detective = document.getElementById("detective").value;
+            let row = document.getElementById(`case-${caseId}`);
+
+            if (row) {
+                row.cells[2].innerText = "Assigned";
+                row.cells[2].classList.remove("unassigned");
+                row.cells[3].innerText = detective;
+                row.cells[4].innerHTML = `<button class="btn view" onclick="viewCase('${caseId}')">View</button>`;
+                alert(`Case ${caseId} assigned to Detective ${detective}`);
+            }
+        }
+
+        // PDF Report Generation
+        function downloadReport() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(18);
+            doc.text("Crime Records Management System", 20, 20);
+            doc.setFontSize(14);
+            doc.text("CIO Investigation Report", 20, 30);
+            doc.setFontSize(12);
+            doc.text("Generated on: " + new Date().toLocaleString(), 20, 40);
+
+            let y = 60;
+            doc.setFontSize(12);
+            doc.text("Case Details:", 20, y);
+            y += 10;
+
+            document.querySelectorAll("#case-table tr").forEach((row, index) => {
+                const cells = row.querySelectorAll("td");
+                if (cells.length > 0) {
+                    doc.text(`Case ID: ${cells[0].innerText}`, 20, y);
+                    doc.text(`Crime Type: ${cells[1].innerText}`, 20, y + 10);
+                    doc.text(`Status: ${cells[2].innerText}`, 20, y + 20);
+                    doc.text(`Assigned Detective: ${cells[3].innerText}`, 20, y + 30);
+                    doc.text("------------------------------------", 20, y + 40);
+                    y += 50;
+                }
+            });
+
+            doc.save("Investigation_Report.pdf");
+        }
+
+        // Logout Function
+        function logout() {
+            window.location.href = "index.html"; // Change this URL if needed
+        }
+    </script>
+
+    <style>
+        /* Logout Button */
+        .logout {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            background-color: red;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html>
